@@ -10,7 +10,6 @@ import UIKit
 
 
 class DetailViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-
     
     @IBOutlet weak var selectedItemLabel: UILabel!
     @IBOutlet weak var label1: UILabel!
@@ -189,6 +188,7 @@ class DetailViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     override func viewDidLoad() {
         super.viewDidLoad()
         setInitialValues()
+        
         if let category = category{
             switch category {
             case .character:
@@ -318,11 +318,6 @@ class DetailViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             }
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     
     //Number of column
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -534,6 +529,9 @@ class DetailViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             self.usdButton.isEnabled = true
             self.englishButton.isEnabled = true
             self.metricButton.isEnabled = true
+            
+            exchangeRateLabel.isHidden = true
+            exchangeRateValue.isHidden = true
         }
     }
     
